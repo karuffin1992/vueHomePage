@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Home</title>
+  </head>
+  <body onload="onLoad();">
+    <section id="timeWeather" class="pageContainer">
+      <div id="timeWeatherContainer" class="bigBox">
+        <div id="clock">
+          <div id="clockContainer">
+            <div id="date"></div>
+            <div id="time"></div>
+            <div id="weatherText"></div>
+          </div>
+        </div>
+        <div id="weather">
+          <div id="weatherContainer">
+            <div id="mainIcon">
+              <div id="mainIcon_2"></div>
+            </div>
+            <div id="secondaryIcon">
+              <div id="secIcon_2"></div>
+              <div id="secIcon_3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="search" class="pageContainer">
+      <div id="searchContainer">
+        <form action="https://google.com/search" method="get" target="_blank">
+          <input type="text" name="q" placeholder="Search..." autofocus="autofocus" autocomplete="off"/>
+        </form>
+      </div>
+    </section>
+    <section id="bookmark" class="pageContainer">
+      <div id="bookmarkContainer">
+        <div id="generalList" class="box">
+          <div class="boxContent">
+            <p>General</p>
+            <ul class="linkBox">
+              <li class="linkItem"><a class="linkA" target="_blank" href="https://www.reddit.com/">Reddit</a></li>
+              <li class="linkItem"><a class="linkA" target="_blank" href="https://www.youtube.com/">YouTube</a></li>
+              <li class="linkItem"><a class="linkA" target="_blank" href="https://mail.google.com/">Gmail</a></li>
+              <li class="linkItem"><a class="linkA" target="_blank" href="https://www.netflix.com/">Netflix</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="devList" class="box">
+          <div class="boxContent">
+            <p>Dev Stuff</p>
+            <ul class="linkBox">
+              <li class="linkItem"><a class="linkA" target="_blank" href="https://www.github.com/">Github</a></li>
+              <li class="linkItem"><a class="linkA" target="_blank" href="https://www.udemy.com/">Udemy</a></li>
+              <li class="linkItem"><a class="linkA" target="_blank" href="https://www.codewars.com/">Codewars</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="animeList" class="box">
+          <div class="boxContent">
+           <p>Anime/Korean</p>
+           <ul class="linkBox">
+             <li class="linkItem"><a class="linkA" target="_blank" href="https://www.masterani.me/">MasterAnime</a></li>
+             <li class="linkItem"><a class="linkA" target="_blank" href="https://www.animeshow.tv/">Animeshow</a></li>
+             <li class="linkItem"><a class="linkA" target="_blank" href="https://www.crunchyroll.com/">Crunchyroll</a></li>
+             <li class="linkItem"><a class="linkA" target="_blank" href="https://www.viki.com/">Viki</a></li>
+           </ul>
+         </div>
+       </div>
+      </div>
+    </section>
+  </body>
+  <script src="./js/index.js"></script>
+</html>
