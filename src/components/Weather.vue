@@ -3,9 +3,9 @@
     <div class="timeWeatherContainer bigBox">
       <div class="clock">
         <div class="clockContainer">
-          <div class="date"></div>
-          <div class="time"></div>
-          <div class="weatherText"></div>
+          <div class="date">{{ getDate() }}</div>
+          <div class="time">{{ getTime() }}</div>
+          <div class="weatherText">{{ getDayAndTemp() }}</div>
         </div>
       </div>
       <div class="weather">
@@ -25,10 +25,42 @@
 
 <script>
 export default {
-  name: 'Weather'
+  name: 'Weather',
+  props: {
+    cityName: String,
+    cityTemp: Number
+  },
+  methods: {
+    getTime: function () {
+      const date = new Date()
+
+      return `${date.getHours()}: ${this.addZero(date.getMinutes())}: ${this.addZero(date.getSeconds())}`
+    },
+    addZero: function (time) {
+      if (time < 10) time = '0' + time
+      return time
+    },
+    getDate: function () {
+      const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+      const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+      let date = new Date()
+      let dateStr = months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ', ' + date.getUTCFullYear()
+      let dayOfWeek = weekday[date.getDay()]
+
+      return `${dateStr} | ${dayOfWeek}`
+    },
+    getDayAndTemp: function () {
+      return `${this.cityName} | ${this.convertToFahrenheit(this.cityTemp)} ° F`
+    },
+    convertToFahrenheit: function (temp) {
+      return Math.round(((temp - 273.15) * 1.8) + 32)
+    }
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+
 </style>

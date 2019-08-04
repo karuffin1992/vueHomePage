@@ -12,7 +12,7 @@ import Bookmarks from './Bookmarks.vue'
 export default {
   name: 'Links',
   components: {
-      Bookmarks
+    Bookmarks
   }
 }
 </script>
