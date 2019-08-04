@@ -11,6 +11,9 @@ I am using the following:
 
 I also want to develop more functionality, such as opening customizing the different sections of links and making the page more responsive.
 
+# Original Project
+Please see https://github.com/karuffin1992/startupPage for the original project.
+
 # Motivation
 I wanted to learn Vue.js, so I decided to refactor my existing project from vanilla JS to Vue.js
 
