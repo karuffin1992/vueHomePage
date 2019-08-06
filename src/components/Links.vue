@@ -1,7 +1,12 @@
 <template>
     <section class="bookmark pageContainer">
         <div class="bookmarkContainer">
-            <Bookmarks />
+            <Bookmarks v-for="item in items"
+              :key="item.id"
+              :id="item.id"
+              :title="item.title"
+              :links="item.links"
+            />
         </div>
     </section>
 </template>
@@ -11,6 +16,9 @@ import Bookmarks from './Bookmarks.vue'
 
 export default {
   name: 'Links',
+  props: {
+    items: Array
+  },
   components: {
     Bookmarks
   }

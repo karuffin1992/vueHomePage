@@ -3,18 +3,31 @@
         <div class="boxContent">
             <p>General</p>
             <ul class="linkBox">
-                <li class="linkItem"><a class="linkA" target="_blank" href="https://www.reddit.com/">Reddit</a></li>
-                <li class="linkItem"><a class="linkA" target="_blank" href="https://www.youtube.com/">YouTube</a></li>
-                <li class="linkItem"><a class="linkA" target="_blank" href="https://mail.google.com/">Gmail</a></li>
-                <li class="linkItem"><a class="linkA" target="_blank" href="https://www.netflix.com/">Netflix</a></li>
+                <BookmarkItem
+                    v-for="link in links"
+                    :key="link.id"
+                    :id="link.id"
+                    :title="link.title"
+                    :url="link.url"
+                />
             </ul>
         </div>
     </div>
 </template>
 
 <script>
+import BookmarkItem from './BookmarkItem.vue'
+
 export default {
-  name: 'Bookmarks'
+  name: 'Bookmarks',
+  components: {
+    BookmarkItem
+  },
+  props: {
+    id: Number,
+    title: String,
+    links: Array
+  }
 }
 </script>
 
