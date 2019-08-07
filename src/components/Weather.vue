@@ -4,7 +4,7 @@
       <div class="clock">
         <div class="clockContainer">
           <div class="date">{{ getDate() }}</div>
-          <div class="time">{{ getTime() }}</div>
+          <div class="time">{{ time }}</div>
           <div class="weatherText">{{ getDayAndTemp() }}</div>
         </div>
       </div>
@@ -30,11 +30,22 @@ export default {
     cityName: String,
     cityTemp: Number
   },
+  data() {
+    return {
+      time: ''
+    }
+  },
+  mounted () {
+    this.$options.interval = setInterval(this.getTime, 1000);
+  },
+  beforeDestroy () {
+    clearInterval(this.$options.interval);
+  },
   methods: {
     getTime: function () {
       const date = new Date()
 
-      return `${date.getHours()}: ${this.addZero(date.getMinutes())}: ${this.addZero(date.getSeconds())}`
+      this.time =  `${date.getHours()}: ${this.addZero(date.getMinutes())}: ${this.addZero(date.getSeconds())}`
     },
     addZero: function (time) {
       if (time < 10) time = '0' + time
@@ -62,5 +73,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
 </style>
