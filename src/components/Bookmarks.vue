@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <div class="boxContent">
-            <p>General</p>
+            <p>{{ title }}</p>
             <ul class="linkBox">
                 <BookmarkItem
                     v-for="link in links"
