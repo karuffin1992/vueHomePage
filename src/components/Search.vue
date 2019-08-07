@@ -16,4 +16,24 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.searchContainer {
+  margin: 0 auto;
+  width: 1100px;
+}
+
+form input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 2px solid $black;
+  border-radius: 25px;
+  font-size: 1.25rem;
+  text-align: center;
+  background-color: $black;
+  color: $white;
+}
+
+form input:focus{
+  outline: none;
+}
 </style>

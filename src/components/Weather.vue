@@ -4,7 +4,7 @@
       <div class="clock">
         <div class="clockContainer">
           <div class="date">{{ getDate() }}</div>
-          <div class="time">{{ time }}</div>
+          <div ref="time" class="time">{{ time }}</div>
           <div class="weatherText">{{ getDayAndTemp() }}</div>
         </div>
       </div>
@@ -30,22 +30,19 @@ export default {
     cityName: String,
     cityTemp: Number
   },
-  data() {
+  data () {
     return {
       time: ''
     }
   },
-  mounted () {
-    this.$options.interval = setInterval(this.getTime, 1000);
-  },
-  beforeDestroy () {
-    clearInterval(this.$options.interval);
+  created () {
+    setInterval(this.getTime, 1000)
   },
   methods: {
     getTime: function () {
       const date = new Date()
 
-      this.time =  `${date.getHours()}: ${this.addZero(date.getMinutes())}: ${this.addZero(date.getSeconds())}`
+      this.time = `${date.getHours()}:${this.addZero(date.getMinutes())}:${this.addZero(date.getSeconds())}`
     },
     addZero: function (time) {
       if (time < 10) time = '0' + time
@@ -73,4 +70,50 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+/* Time/Weather */
+.bigBox {
+  height: 195px;
+  overflow: hidden;
+  background-color: $black;
+  border-radius: 3px;
+  border-width: 5px 0px;
+  border-style: solid;
+  border-color: $darkCyan;
+  width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 0 15px hsla(0,0%,0%,.8);
+}
+
+.clock {
+  padding-top: 2em;
+  padding-left: 3em;
+  float: left;
+}
+
+.date {
+  display: block;
+  font-size: 1em;
+  color: $white;
+  height: 20px;
+}
+
+.time {
+  display: block;
+  font-size: 5em;
+  color: $white;
+  height: 90px;
+}
+
+.weather {
+  padding-top: 1.75em;
+  padding-right: 7.5em;
+  float: right;
+}
+
+.weatherText {
+  display: block;
+  text-align: center;
+  color: $lighterGrey;
+  height: 25px;
+}
 </style>

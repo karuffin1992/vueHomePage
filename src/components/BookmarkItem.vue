@@ -17,4 +17,20 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+li.linkItem {
+  list-style: none;
+  display: inline-block;
+  padding: 7px 5px;
+  width: 100%;
+  font-size: 20px;
+}
+
+li.linkItem a.linkA {
+  color: $lightGrey;
+  text-decoration: none;
+}
+
+li.linkItem:hover a.linkA {
+  text-decoration: underline;
+}
 </style>

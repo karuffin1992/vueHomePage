@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="app">
     <Weather />
     <Search />
     <Links :items="Bookmarks.items" />
@@ -18,7 +18,7 @@ export default {
     Search,
     Links
   },
-  data() {
+  data () {
     return {
       Bookmarks: {
         nextBookmarkID: 3,
@@ -107,6 +107,21 @@ export default {
 </script>
 
 <style lang="scss">
+/* Main */
+html { box-sizing: border-box; }
+html *,
+html *:before,
+html *:after { box-sizing: inherit; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  background: rgb(16,46,49);
+  background: linear-gradient(90deg, rgba(16,46,49,1) 0%, rgba(42,117,127,1) 33%, rgba(57,159,173,1) 66%, rgba(73,206,223,1) 100%);
+}
+
+.pageContainer {
+  padding: 1em;
+  opacity: .9;
+}
 </style>
-
-
