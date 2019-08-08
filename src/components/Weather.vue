@@ -8,27 +8,23 @@
           <div class="weatherText">{{ getDayAndTemp() }}</div>
         </div>
       </div>
-      <div class="weather">
-        <div class="weatherContainer">
-          <div class="mainIcon">
-            <div class="mainIcon_2"></div>
-          </div>
-          <div class="secondaryIcon">
-            <div class="secIcon_2"></div>
-            <div class="secIcon_3"></div>
-          </div>
-        </div>
-      </div>
+      <WeatherItem :currWeather="currWeather" />
     </div>
   </section>
 </template>
 
 <script>
+import WeatherItem from './WeatherItem'
+
 export default {
   name: 'Weather',
+  components: {
+    WeatherItem
+  },
   props: {
-    cityName: String,
-    cityTemp: Number
+    currName: String,
+    currTemp: Number,
+    currWeather: String
   },
   data () {
     return {
@@ -59,7 +55,7 @@ export default {
       return `${dateStr} | ${dayOfWeek}`
     },
     getDayAndTemp: function () {
-      return `${this.cityName} | ${this.convertToFahrenheit(this.cityTemp)} ° F`
+      return `${this.currName} | ${this.convertToFahrenheit(this.currTemp)} ° F`
     },
     convertToFahrenheit: function (temp) {
       return Math.round(((temp - 273.15) * 1.8) + 32)

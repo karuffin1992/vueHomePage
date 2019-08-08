@@ -1,6 +1,10 @@
 <template>
   <div class="app">
-    <Weather />
+    <Weather
+      :currName="currName"
+      :currTemp="currTemp"
+      :currWeather="currWeather"
+    />
     <Search />
     <Links :items="Bookmarks.items" />
   </div>
@@ -10,6 +14,7 @@
 import Weather from './components/Weather.vue'
 import Search from './components/Search.vue'
 import Links from './components/Links.vue'
+import axios from 'axios'
 
 export default {
   name: 'app',
@@ -18,8 +23,28 @@ export default {
     Search,
     Links
   },
+  async created () {
+    const res = await this.getWeatherIcon()
+    this.currName = res.data.name
+    this.currTemp = res.data.main.temp
+    this.currWeather = res.data.weather['0'].main
+    console.log(res)
+  },
+  methods: {
+    getWeatherIcon: async () => {
+      const zipCode = '27511'
+      // API key is for a throwaway account
+      const APIKEY = 'b1f543aec09f0db96158d35a8419b943'
+      let apiURL = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&APPID=${APIKEY}`
+
+      return axios(apiURL)
+    }
+  },
   data () {
     return {
+      currName: '',
+      currTemp: 0,
+      currWeather: '',
       Bookmarks: {
         nextBookmarkID: 3,
         items: [
@@ -108,10 +133,15 @@ export default {
 
 <style lang="scss">
 /* Main */
-html { box-sizing: border-box; }
+html {
+  box-sizing: border-box;
+}
+
 html *,
 html *:before,
-html *:after { box-sizing: inherit; }
+html *:after {
+  box-sizing: inherit;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
