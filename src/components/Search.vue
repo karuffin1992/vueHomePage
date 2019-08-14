@@ -36,4 +36,28 @@ form input[type="text"] {
 form input:focus{
   outline: none;
 }
+
+@media (max-width: 1155px) {
+  .searchContainer {
+    width: 975px;
+  }
+}
+
+@media (max-width: 1015px) {
+  .searchContainer {
+    width: 850px;
+  }
+}
+
+@media (max-width: 930px) {
+  .searchContainer {
+    width: 725px;
+  }
+}
+
+@media (max-width: 775px) {
+  .searchContainer {
+    width: 585px;
+  }
+}
 </style>

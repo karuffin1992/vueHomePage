@@ -31,6 +31,6 @@ li.linkItem a.linkA {
 }
 
 li.linkItem:hover a.linkA {
-  text-decoration: underline;
+  color: $white;
 }
 </style>

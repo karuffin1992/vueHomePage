@@ -30,8 +30,9 @@ export default {
 .bookmarkContainer {
   text-align: center;
   color: $white;
-  height: 130px;
-  width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  flex-flow: wrap;
+  justify-content: center;
 }
 </style>
