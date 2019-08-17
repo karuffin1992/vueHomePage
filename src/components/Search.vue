@@ -60,4 +60,28 @@ form input:focus{
     width: 585px;
   }
 }
+
+@media (max-width: 630px) {
+  .searchContainer {
+    width: 460px;
+  }
+}
+
+@media (max-width: 490px) {
+  .searchContainer {
+    width: 370px;
+  }
+}
+
+@media (max-width: 390px) {
+  .searchContainer {
+    width: 320px;
+  }
+}
+
+@media (max-width: 320px) {
+  .searchContainer {
+    width: 250px;
+  }
+}
 </style>

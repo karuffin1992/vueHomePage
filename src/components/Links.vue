@@ -34,5 +34,13 @@ export default {
   width: 100%;
   flex-flow: wrap;
   justify-content: center;
+  flex-direction: row;
+}
+
+@media (max-width: 1245px) {
+  .bookmarkContainer {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 </style>
