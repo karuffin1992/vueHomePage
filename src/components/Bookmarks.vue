@@ -82,4 +82,10 @@ ul.linkBox {
   opacity: 0.0;
   transition: 0.3s;
 }
+
+@media (max-width: 444px) {
+  .box {
+    margin: 0 auto;
+  }
+}
 </style>
