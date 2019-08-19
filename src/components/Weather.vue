@@ -67,49 +67,109 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 /* Time/Weather */
+.timeWeatherContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .bigBox {
   height: 195px;
+  width: 600px;
+  margin: 0 auto;  
   overflow: hidden;
   background-color: $black;
+  box-shadow: 0 0 15px hsla(0,0%,0%,.8);
   border-radius: 3px;
   border-width: 5px 0px;
   border-style: solid;
   border-color: $darkCyan;
-  width: 600px;
-  margin: 0 auto;
-  box-shadow: 0 0 15px hsla(0,0%,0%,.8);
 }
 
 .clock {
-  padding-top: 2em;
-  padding-left: 3em;
-  float: left;
+  width: 60%;
+}
+
+.weather {
+  width: 40%;
 }
 
 .date {
-  display: block;
   font-size: 1em;
   color: $white;
   height: 20px;
 }
 
 .time {
-  display: block;
   font-size: 5em;
   color: $white;
   height: 90px;
 }
 
-.weather {
-  padding-top: 1.75em;
-  padding-right: 7.5em;
-  float: right;
-}
-
-.weatherText {
-  display: block;
+.weatherText {  
   text-align: center;
   color: $lighterGrey;
   height: 25px;
+}
+
+@media (max-width: 630px) {
+  .bigBox {
+    height: 320px;
+    width: 460px;
+    margin: 0 auto;  
+    overflow: hidden;
+    background-color: $black;
+    box-shadow: 0 0 15px hsla(0,0%,0%,.8);
+    border-radius: 3px;
+    border-width: 5px 0px;
+    border-style: solid;
+    border-color: $darkCyan;
+  }
+
+  .timeWeatherContainer {
+    display: flex;
+    flex-direction: column;    
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .clock {
+    width: 100%;
+    padding-top: 2em;
+  }
+
+  .weather {
+    width: 100%;
+  }
+}
+
+@media (max-width: 490px) {
+  .bigBox {
+    width: 370px;
+  }
+}
+
+@media (max-width: 390px) {
+  .bigBox {
+    width: 320px;
+  }
+
+  .time {
+    font-size: 4em;  
+    height: 75px;
+  }
+}
+
+@media (max-width: 320px) {
+  .bigBox {
+    height: 275px;
+    width: 250px;
+  }
+
+  .time {
+    font-size: 3em;  
+    height: 60px;
+  }
 }
 </style>

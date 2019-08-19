@@ -88,4 +88,14 @@ ul.linkBox {
     margin: 0 auto;
   }
 }
+
+@media (max-width: 320px) {
+  .box {
+    width: 250px;
+  }
+
+  .boxContent p {
+    font-size: 23px;
+  }
+}
 </style>
